@@ -12,7 +12,7 @@ const RegisterForm = () => {
   };
 
   const makePost = (cwid) => {
-    const api = "http://selfregister.med.cornell.edu:4000";
+    const api = "http://localhost:4000";
     axios
       .post(`${api}/register`, {
         cwid: cwid
@@ -29,7 +29,7 @@ const RegisterForm = () => {
     evt.preventDefault();
     // bool: if cwid is good
     const validCwid = verifyCwid(cwid);
-    // 
+    //
     if (validCwid) {
       makePost(cwid);
     } else {
