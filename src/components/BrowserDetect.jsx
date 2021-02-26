@@ -7,7 +7,7 @@ const BrowserDetect = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("http://localhost:4000");
+      const result = await axios("http://selfregister.med.cornell.edu:4000");
       console.log(result);
 
       setIp(result.data);

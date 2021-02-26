@@ -4,9 +4,11 @@ import ComputerComponent from "../components/Dashboard/ComputerComponent";
 const Dashboard = () => {
   const [computers, setcomputers] = useState([{}]);
   useEffect(() => {
-    axios.get("http://localhost:4000/test").then((data) => {
-      setcomputers(data.data);
-    });
+    axios
+      .get("http://selfregister.med.cornell.edu:4000/assets")
+      .then((data) => {
+        setcomputers(data.data);
+      });
   }, []);
   return (
     <>

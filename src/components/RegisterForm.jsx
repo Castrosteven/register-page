@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+
 const RegisterForm = () => {
   const [cwid, setCwid] = useState("");
 
@@ -12,10 +13,10 @@ const RegisterForm = () => {
   };
 
   const makePost = (cwid) => {
-    const api = "http://localhost:4000";
+    const api = "http://selfregister.med.cornell.edu:4000";
     axios
-      .post(`${api}/register`, {
-        cwid: cwid
+      .post(`${api}/computer/register`, {
+        cwid: cwid,
       })
       .then((res) => {
         console.log(res);
@@ -51,8 +52,7 @@ const RegisterForm = () => {
       </div>
       {cwid}
       <button className="btn btn-block btn-primary" type="submit">
-        {" "}
-        Register Computer{" "}
+        Register Computer
       </button>
     </form>
   );
